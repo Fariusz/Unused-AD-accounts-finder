@@ -13,7 +13,7 @@ $Subject = $Subject + " " + $CurrentMonth + " " + $CurrentYear
 add-pssnapin quest.activeroles.admanagement 
 
 #===GET OUTPUT=======================================
-$PasswordNeverExpiresAccounts = (get-QADUser -SearchRoot 'zdv.liebherr.i/Hosted Companies/LPL' -Enabled -PasswordNeverExpires | select Name) | Out-String
+$PasswordNeverExpiresAccounts = (get-QADUser -SearchRoot '****' -Enabled -PasswordNeverExpires | select Name) | Out-String
 $PasswordNeverExpiresAccounts = $PasswordNeverExpiresAccounts.Replace("Name", "Hasło nie wygasa na kontach:")
 
 $NotLoggedOnFor30Days = (get-QADUser -SearchRoot '****' -Enabled -NotLoggedOnFor 30 | select Name) |Out-String
